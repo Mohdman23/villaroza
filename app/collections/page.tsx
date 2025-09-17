@@ -11,7 +11,6 @@ import Navigation from "@/components/navigation"
 
 export default function CollectionsPage() {
   const [isVisible, setIsVisible] = useState(false)
-  // Start with porcelain category for better organization
   const [activeCategory, setActiveCategory] = useState("porcelain")
 
   useEffect(() => {
@@ -19,47 +18,53 @@ export default function CollectionsPage() {
   }, [])
 
   const categories = [
-    { id: "porcelain", name: "البلاط البورسلان", icon: Palette, featured: true },
-    { id: "bathroom", name: "تجهيزات الحمامات", icon: Bath, featured: true },
-    { id: "cladding", name: "كسوة الجدران", icon: Home, featured: true },
-    { id: "pool", name: "بلاط المسابح", icon: Waves, featured: false },
-    { id: "faucets", name: "البطاريات والأحواض", icon: Droplets, featured: false },
-    { id: "heating", name: "أنظمة التدفئة", icon: Lightbulb, featured: false },
-    { id: "stone", name: "البلاط الحجري", icon: Home, featured: false },
-    { id: "all", name: "جميع المنتجات", icon: Grid, featured: false },
+    { id: "porcelain", name: "البلاط البورسلان", icon: Palette, featured: true, color: "from-blue-500 to-purple-600" },
+    { id: "bathroom", name: "تجهيزات الحمامات", icon: Bath, featured: true, color: "from-emerald-500 to-teal-600" },
+    { id: "cladding", name: "كسوة الجدران", icon: Home, featured: true, color: "from-orange-500 to-red-600" },
+    { id: "pool", name: "بلاط المسابح", icon: Waves, featured: false, color: "from-cyan-500 to-blue-600" },
+    {
+      id: "faucets",
+      name: "البطاريات والأحواض",
+      icon: Droplets,
+      featured: false,
+      color: "from-indigo-500 to-purple-600",
+    },
+    { id: "heating", name: "أنظمة التدفئة", icon: Lightbulb, featured: false, color: "from-yellow-500 to-orange-600" },
+    { id: "stone", name: "البلاط الحجري", icon: Home, featured: false, color: "from-gray-500 to-slate-600" },
+    { id: "all", name: "جميع المنتجات", icon: Grid, featured: false, color: "from-pink-500 to-rose-600" },
   ]
 
   const collections = [
     // New Final Spanish Porcelain Tiles
     {
       id: 56,
-      title: "مجموعة CENTRAL DISTRICT الإسبانية",
+      title: "CENTRAL DISTRICT الإسبانية",
       category: "porcelain",
-      description: "بلاط بورسلان إسباني مربع بلون بيج فاتح مع ملمس ناعم (60×60 سم) مثالي للمساحات العصرية",
+      description: "بلاط بورسلان إسباني مربع بلون بيج فاتح مع ملمس ناعم (60×60 سم)",
       images: ["/images/central-district-tile.jpg"],
-      features: ["صنع في إسبانيا", "60×60 سم", "بيج فاتح", "ملمس ناعم"],
+      features: ["صنع في إسبانيا", "60×60 سم", "بيج فاتح"],
       rating: 4.8,
       reviews: 22,
       isNew: true,
     },
     {
       id: 57,
-      title: "مجموعة CONTRACD PERAL الإسبانية",
+      title: "CONTRACD PERAL الإسبانية",
       category: "porcelain",
-      description: "بلاط بورسلان إسباني مربع بلون رمادي لؤلؤي مع نقاط دقيقة (60×60 سم) للتصاميم المعاصرة",
+      description: "بلاط بورسلان إسباني مربع بلون رمادي لؤلؤي مع نقاط دقيقة (60×60 سم)",
       images: ["/images/contracd-peral-tile.jpg"],
-      features: ["صنع في إسبانيا", "60×60 سم", "رمادي لؤلؤي", "نقاط دقيقة"],
+      features: ["صنع في إسبانيا", "60×60 سم", "رمادي لؤلؤي"],
       rating: 4.7,
       reviews: 19,
       isNew: true,
     },
     {
       id: 58,
-      title: "مجموعة CONCORDE ANF الإسبانية",
+      title: "CONCORDE ANF الإسبانية",
       category: "porcelain",
-      description: "بلاط بورسلان إسباني مربع بلون رمادي متوسط مع ملمس ناعم (60×60 سم) للأرضيات والجدران",
+      description: "بلاط بورسلان إسباني مربع بلون رمادي متوسط مع ملمس ناعم (60×60 سم)",
       images: ["/images/concorde-anf-tile.jpg"],
-      features: ["صنع في إسبانيا", "60×60 سم", "رمادي متوسط", "متعدد الاستخدام"],
+      features: ["صنع في إسبانيا", "60×60 سم", "رمادي متوسط"],
       rating: 4.9,
       reviews: 25,
       isNew: true,
@@ -68,7 +73,7 @@ export default function CollectionsPage() {
     // Featured Spanish Porcelain Tiles (No Pricing)
     {
       id: 46,
-      title: "مجموعة SIGNA LISA الإسبانية",
+      title: "SIGNA LISA الإسبانية",
       category: "porcelain",
       description: "بلاط بورسلان إسباني فاخر بلون بيج فاتح (120×60 سم) مثالي للمساحات الداخلية العصرية والكلاسيكية",
       images: ["/images/signa-lisa-spanish-tile.jpg"],
@@ -79,7 +84,7 @@ export default function CollectionsPage() {
     },
     {
       id: 47,
-      title: "مجموعة HEAUT EVIL WHITE الإسبانية",
+      title: "HEAUT EVIL WHITE الإسبانية",
       category: "porcelain",
       description: "بلاط بورسلان إسباني بلون أبيض كريمي (120×60 سم) يضفي إشراقاً ونظافة على المساحات",
       images: ["/images/heaut-evil-white-tile.jpg"],
@@ -90,7 +95,7 @@ export default function CollectionsPage() {
     },
     {
       id: 48,
-      title: "مجموعة CRIKEKET PERLA الإسبانية",
+      title: "CRIKEKET PERLA الإسبانية",
       category: "porcelain",
       description: "بلاط بورسلان إسباني مربع بلون رمادي لؤلؤي (60×60 سم) مثالي للأرضيات والجدران",
       images: ["/images/crikeket-perla-tile.jpg"],
@@ -101,7 +106,7 @@ export default function CollectionsPage() {
     },
     {
       id: 49,
-      title: "مجموعة GALWAY ALBAR الإسبانية المحدثة",
+      title: "GALWAY ALBAR الإسبانية المحدثة",
       category: "porcelain",
       description: "بلاط بورسلان إسباني بلون بيج فاتح (120×60 سم) بتشطيب ناعم وأناقة كلاسيكية",
       images: ["/images/galway-albar-spanish-tile.jpg"],
@@ -112,7 +117,7 @@ export default function CollectionsPage() {
     },
     {
       id: 50,
-      title: "مجموعة CONCEPT CREMA الإسبانية",
+      title: "CONCEPT CREMA الإسبانية",
       category: "porcelain",
       description: "بلاط بورسلان إسباني بلون كريمي دافئ (120×60 سم) يجمع بين الأناقة والعملية",
       images: ["/images/concept-crema-tile.jpg"],
@@ -123,7 +128,7 @@ export default function CollectionsPage() {
     },
     {
       id: 51,
-      title: "مجموعة GEOTECH IVOR الإسبانية",
+      title: "GEOTECH IVOR الإسبانية",
       category: "porcelain",
       description: "بلاط بورسلان إسباني بلون عاجي مع نقاط ملونة (120×60 سم) يضفي طابعاً طبيعياً مميزاً",
       images: ["/images/geotech-ivor-tile.jpg"],
@@ -134,11 +139,11 @@ export default function CollectionsPage() {
     },
     {
       id: 52,
-      title: "مجموعة BETON GRAFITO الإسبانية",
+      title: "BETON GRAFITO الإسبانية",
       category: "porcelain",
       description: "بلاط بورسلان إسباني بتأثير الخرسانة الرمادية (120×60 سم) للتصاميم الصناعية العصرية",
       images: ["/images/beton-grafito-tile.jpg"],
-      features: ["صنع في إسبانيا", "120×60 سم", "تأثير خرسانة", "تصميم صناعي"],
+      features: ["تأثير خرسانة", "تصميم صناعي", "صنع في إسبانيا", "120×60 سم"],
       rating: 4.9,
       reviews: 32,
       isPopular: true,
@@ -147,29 +152,29 @@ export default function CollectionsPage() {
     // MAHDY STONE Wall Cladding
     {
       id: 53,
-      title: "مجموعة MOUNTAIN RANGE الذهبية",
+      title: "MOUNTAIN RANGE الذهبية",
       category: "cladding",
       description: "كسوة جدران حجرية طبيعية من MAHDY STONE بألوان ذهبية دافئة، تضفي فخامة وطابعاً طبيعياً مميزاً",
       images: ["/images/mountain-range-sunshine-stone.jpg"],
-      features: ["حجر طبيعي", "ألوان ذهبية", "MAHDY STONE", "تأثير جبلي"],
+      features: ["ألوان ذهبية", "تأثير جبلي", "MAHDY STONE", "طوب أحمر تقليدي"],
       rating: 5.0,
       reviews: 24,
       isNew: true,
     },
     {
       id: 54,
-      title: "مجموعة MOUNTAIN ROCKS الرمادية",
+      title: "MOUNTAIN ROCKS الرمادية",
       category: "cladding",
       description: "كسوة جدران حجرية من MAHDY STONE بأحجار رمادية كبيرة وملمس طبيعي خشن للتصاميم الجبلية",
       images: ["/images/mountain-rocks-grey-stone.jpg"],
-      features: ["أحجار كبيرة", "رمادي طبيعي", "ملمس خشن", "MAHDY STONE"],
+      features: ["أحجار كبيرة", "ملمس خشن", "تصميم جبلي", "MAHDY STONE"],
       rating: 4.8,
       reviews: 26,
       isNew: true,
     },
     {
       id: 55,
-      title: "مجموعة ART BRICK الأحمر التقليدي",
+      title: "ART BRICK الأحمر التقليدي",
       category: "cladding",
       description: "كسوة جدران بتصميم الطوب الأحمر التقليدي من MAHDY STONE، مثالية للتصاميم الكلاسيكية والتراثية",
       images: ["/images/art-brick-red-mahdy.jpg"],
@@ -182,32 +187,31 @@ export default function CollectionsPage() {
     // Existing collections continue...
     {
       id: 1,
-      title: "مجموعة بلاط المسابح المتخصص",
+      title: "بلاط المسابح المتخصص",
       category: "pool",
-      description:
-        "بلاط مسابح مقاوم للكلور والمواد الكيميائية مع مواد التركيب من MAPEI، مع سطح مضاد للانزلاق لضمان الأمان",
+      description: "بلاط مسابح مقاوم للكلور مع مواد التركيب من MAPEI",
       images: ["/images/pool-tiles-mapei.jpg"],
-      features: ["مقاوم للكلور", "مضاد للانزلاق", "ألوان زاهية ثابتة", "مواد تركيب MAPEI"],
+      features: ["مقاوم للكلور", "مضاد للانزلاق", "MAPEI", "ألوان زاهية ثابتة"],
       rating: 5.0,
       reviews: 52,
       isPopular: true,
     },
     {
       id: 2,
-      title: "مجموعة CABRERA الزجاجية للمسابح",
+      title: "CABRERA الزجاجية للمسابح",
       category: "pool",
-      description: "موزاييك زجاجي إسباني فاخر من ALTOGLASS بدرجات الأزرق، مثالي لتبطين المسابح الراقية",
+      description: "موزاييك زجاجي إسباني فاخر من ALTOGLASS بدرجات الأزرق",
       images: ["/images/cabrera-pool-tiles.jpg"],
-      features: ["موزاييك زجاجي", "31×45 سم", "صنع في إسبانيا", "ALTOGLASS"],
+      features: ["موزاييك زجاجي", "31×45 سم", "ALTOGLASS", "صنع في إسبانيا"],
       rating: 5.0,
       reviews: 38,
       isNew: true,
     },
     {
       id: 3,
-      title: "مجموعة الأحواض الكريستالية الفاخرة",
+      title: "الأحواض الكريستالية الفاخرة",
       category: "faucets",
-      description: "أحواض حمامات كريستالية بتصاميم فنية راقية، مصنوعة من الكريستال عالي الجودة مع نقوش يدوية",
+      description: "أحواض حمامات كريستالية بتصاميم فنية راقية",
       images: ["/images/blue-crystal-basin.jpg"],
       features: ["كريستال عالي الجودة", "تصاميم فنية", "مقاوم للخدوش", "ضمان 5 سنوات"],
       rating: 4.9,
@@ -216,7 +220,7 @@ export default function CollectionsPage() {
     },
     {
       id: 4,
-      title: "مجموعة الأحواض النحاسية الذهبية",
+      title: "الأحواض النحاسية الذهبية",
       category: "faucets",
       description: "أحواض نحاسية فاخرة بلمسة ذهبية، مصنوعة يدوياً بتقنيات تقليدية مع نقوش هندسية دقيقة",
       images: ["/images/gold-brass-basin.jpg"],
@@ -227,7 +231,7 @@ export default function CollectionsPage() {
     },
     {
       id: 5,
-      title: "مجموعة الأحواض الهندسية السوداء",
+      title: "الأحواض الهندسية السوداء",
       category: "faucets",
       description: "أحواض سيراميك بتصميم هندسي عصري باللون الأسود، تضفي لمسة من الأناقة والفخامة",
       images: ["/images/black-geometric-basin.jpg"],
@@ -238,7 +242,7 @@ export default function CollectionsPage() {
     },
     {
       id: 6,
-      title: "مجموعة الأحواض الفضية المزخرفة",
+      title: "الأحواض الفضية المزخرفة",
       category: "faucets",
       description: "أحواض معدنية بلمسة فضية مع زخارف نباتية راقية، تجمع بين الأناقة والعملية",
       images: ["/images/silver-decorative-basin.jpg"],
@@ -249,7 +253,7 @@ export default function CollectionsPage() {
     },
     {
       id: 7,
-      title: "مجموعة الأحواض الكريستالية البيضاء",
+      title: "الأحواض الكريستالية البيضاء",
       category: "faucets",
       description: "أحواض كريستال شفافة بنقوش هندسية معقدة، تعكس الضوء بطريقة ساحرة",
       images: ["/images/clear-crystal-basin.jpg"],
@@ -260,7 +264,7 @@ export default function CollectionsPage() {
     },
     {
       id: 8,
-      title: "مجموعة الأحواض الرخامية البيضاء",
+      title: "الأحواض الرخامية البيضاء",
       category: "faucets",
       description: "أحواض بورسلان بتأثير الرخام الأبيض الطبيعي، تضفي فخامة كلاسيكية على الحمام",
       images: ["/images/white-marble-basin.jpg"],
@@ -271,7 +275,7 @@ export default function CollectionsPage() {
     },
     {
       id: 9,
-      title: "مجموعة الأحواض النحاسية المطروقة",
+      title: "الأحواض النحاسية المطروقة",
       category: "faucets",
       description: "أحواض نحاسية مطروقة يدوياً بتقنيات تراثية، تجمع بين الأصالة والفخامة",
       images: ["/images/bronze-hammered-basin.jpg"],
@@ -282,7 +286,7 @@ export default function CollectionsPage() {
     },
     {
       id: 10,
-      title: "مجموعة الأحواض الرخامية الرمادية",
+      title: "الأحواض الرخامية الرمادية",
       category: "faucets",
       description: "أحواض بورسلان بتأثير الرخام الرمادي، تناسب التصاميم العصرية والمعاصرة",
       images: ["/images/grey-marble-basin.jpg"],
@@ -293,7 +297,7 @@ export default function CollectionsPage() {
     },
     {
       id: 11,
-      title: "مجموعة MUNCH WHITE الإسبانية",
+      title: "MUNCH WHITE الإسبانية",
       category: "porcelain",
       description: "بلاط بورسلان إسباني بلون أبيض أنيق، مثالي للمساحات الخارجية والتراسات العصرية",
       images: ["/images/munch-white-outdoor.jpg"],
@@ -304,7 +308,7 @@ export default function CollectionsPage() {
     },
     {
       id: 12,
-      title: "مجموعة ATRIUM GREY العصرية",
+      title: "ATRIUM GREY العصرية",
       category: "porcelain",
       description: "بلاط بورسلان إسباني بلون رمادي، مثالي للمساحات المغطاة والبرجولات الحديثة",
       images: ["/images/atrium-grey-pergola.jpg"],
@@ -315,7 +319,7 @@ export default function CollectionsPage() {
     },
     {
       id: 13,
-      title: "مجموعة ATRIM PERLA الفاخرة",
+      title: "ATRIM PERLA الفاخرة",
       category: "porcelain",
       description: "بلاط بورسلان بلون اللؤلؤ الفاتح، يضفي أناقة على المساحات حول المسابح",
       images: ["/images/atrim-perla-pool.jpg"],
@@ -326,7 +330,7 @@ export default function CollectionsPage() {
     },
     {
       id: 14,
-      title: "مجموعة VINICI GREY الأنيقة",
+      title: "VINICI GREY الأنيقة",
       category: "stone",
       description: "بلاط حجري إسباني بلون رمادي، مثالي للمساحات الخارجية وأماكن تناول الطعام",
       images: ["/images/vinici-grey-outdoor.jpg"],
@@ -337,7 +341,7 @@ export default function CollectionsPage() {
     },
     {
       id: 15,
-      title: "مجموعة SUBWAY للحمامات",
+      title: "SUBWAY للحمامات",
       category: "bathroom",
       description: "بلاط سيراميك مستطيل بتصميم SUBWAY الكلاسيكي، مثالي للحمامات العصرية والكلاسيكية",
       images: ["/images/subway-bathroom-tiles.jpg"],
@@ -348,7 +352,7 @@ export default function CollectionsPage() {
     },
     {
       id: 16,
-      title: "مجموعة BLANCO الإسبانية البيضاء",
+      title: "BLANCO الإسبانية البيضاء",
       category: "pool",
       description: "موزاييك زجاجي إسباني أبيض من ALTOGLASS، مثالي للمسابح العصرية والتصاميم المعمارية الحديثة",
       images: ["/images/blanco-pool-tiles.jpg"],
@@ -359,7 +363,7 @@ export default function CollectionsPage() {
     },
     {
       id: 17,
-      title: "مجموعة خزائن الحمام الرخامية السوداء",
+      title: "خزائن الحمام الرخامية السوداء",
       category: "bathroom",
       description: "خزائن حمام فاخرة بسطح رخامي أسود مع إضاءة LED عصرية وتصميم معلق أنيق",
       images: ["/images/black-marble-bathroom.jpg"],
@@ -370,7 +374,7 @@ export default function CollectionsPage() {
     },
     {
       id: 18,
-      title: "مجموعة خزائن الحمام الرخامية الرمادية",
+      title: "خزائن الحمام الرخامية الرمادية",
       category: "bathroom",
       description: "خزائن حمام عصرية بسطح رخامي رمادي مع خزانة خشبية وتصميم عملي ومتطور",
       images: ["/images/grey-marble-bathroom.jpg"],
@@ -381,7 +385,7 @@ export default function CollectionsPage() {
     },
     {
       id: 19,
-      title: "مجموعة AZUL CELESTE السماوية",
+      title: "AZUL CELESTE السماوية",
       category: "pool",
       description: "موزاييك زجاجي إسباني بلون أزرق سماوي من ALTOGLASS، يضفي هدوءاً وأناقة على المسابح",
       images: ["/images/azul-celeste-pool.jpg"],
@@ -392,7 +396,7 @@ export default function CollectionsPage() {
     },
     {
       id: 20,
-      title: "مجموعة خزائن الحمام البيضاء العصرية",
+      title: "خزائن الحمام البيضاء العصرية",
       category: "bathroom",
       description: "خزائن حمام بيضاء أنيقة مع مرآة دائرية وإضاءة مدمجة وتصميم نظيف ومعاصر",
       images: ["/images/white-marble-bathroom.jpg"],
@@ -403,7 +407,7 @@ export default function CollectionsPage() {
     },
     {
       id: 21,
-      title: "مجموعة ESTELA المختلطة الفاخرة",
+      title: "ESTELA المختلطة الفاخرة",
       category: "pool",
       description: "موزاييك زجاجي إسباني بمزيج من الأزرق والذهبي من ALTOGLASS، مثالي للمسابح الفاخرة",
       images: ["/images/estela-pool-tiles.jpg"],
@@ -414,7 +418,7 @@ export default function CollectionsPage() {
     },
     {
       id: 22,
-      title: "مجموعة PAPUA BLUE الزرقاء العميقة",
+      title: "PAPUA BLUE الزرقاء العميقة",
       category: "pool",
       description: "موزاييك زجاجي إسباني بلون أزرق عميق من ALTOGLASS، مثالي للمسابح اللانهائية والمناظر الطبيعية",
       images: ["/images/papua-blue-pool.jpg"],
@@ -425,7 +429,7 @@ export default function CollectionsPage() {
     },
     {
       id: 23,
-      title: "مجموعة خزائن الحمام الخشبية المعاصرة",
+      title: "خزائن الحمام الخشبية المعاصرة",
       category: "bathroom",
       description: "خزائن حمام بتصميم خشبي دافئ مع سطح رخامي أبيض ومرآة مضيئة وتصميم عملي",
       images: ["/images/modern-bathroom-vanity.jpg"],
@@ -436,7 +440,7 @@ export default function CollectionsPage() {
     },
     {
       id: 24,
-      title: "مجموعة خزائن الحمام البيج الفاخرة",
+      title: "خزائن الحمام البيج الفاخرة",
       category: "bathroom",
       description: "خزائن حمام كبيرة بسطح رخامي بيج مع تخزين متكامل وتصميم معلق أنيق",
       images: ["/images/beige-marble-bathroom.jpg"],
@@ -447,7 +451,7 @@ export default function CollectionsPage() {
     },
     {
       id: 25,
-      title: "مجموعة MALLORCA للسبا والجاكوزي",
+      title: "MALLORCA للسبا والجاكوزي",
       category: "pool",
       description: "موزاييك زجاجي إسباني بتدرج أزرق من ALTOGLASS، مثالي للسبا والجاكوزي والمساحات الاستجمامية",
       images: ["/images/mallorca-pool-tiles.jpg"],
@@ -458,7 +462,7 @@ export default function CollectionsPage() {
     },
     {
       id: 26,
-      title: "مجموعة الحمامات الرخامية السوداء الفاخرة",
+      title: "الحمامات الرخامية السوداء الفاخرة",
       category: "bathroom",
       description: "حمامات فاخرة بتصميم رخامي أسود مع إضاءة LED عصرية ومرايا دائرية ذهبية",
       images: ["/images/luxury-black-marble-complete.jpg"],
@@ -469,7 +473,7 @@ export default function CollectionsPage() {
     },
     {
       id: 27,
-      title: "مجموعة الأحواض الزجاجية المزخرفة",
+      title: "الأحواض الزجاجية المزخرفة",
       category: "faucets",
       description: "أحواض زجاجية بنقوش دائرية أنيقة مع سطح رخامي رمادي وتصميم عصري متطور",
       images: ["/images/glass-basin-grey-marble.jpg"],
@@ -480,7 +484,7 @@ export default function CollectionsPage() {
     },
     {
       id: 28,
-      title: "مجموعة الحمامات البيضاء المعاصرة",
+      title: "الحمامات البيضاء المعاصرة",
       category: "bathroom",
       description: "حمامات بيضاء أنيقة مع رخام أبيض ومرايا دائرية مضيئة وتصميم نظيف ومعاصر",
       images: ["/images/white-marble-modern-bathroom.jpg"],
@@ -491,7 +495,7 @@ export default function CollectionsPage() {
     },
     {
       id: 29,
-      title: "مجموعة الأحواض المعدنية المزخرفة",
+      title: "الأحواض المعدنية المزخرفة",
       category: "faucets",
       description: "أحواض معدنية بنقوش هندسية دقيقة مع سطح رخامي أبيض وتصميم فني راقي",
       images: ["/images/decorative-basin-black-marble.jpg"],
@@ -502,7 +506,7 @@ export default function CollectionsPage() {
     },
     {
       id: 30,
-      title: "مجموعة الحمامات الرخامية السوداء المتكاملة",
+      title: "الحمامات الرخامية السوداء المتكاملة",
       category: "bathroom",
       description: "تصميم حمام متكامل بالرخام الأسود مع خزانة معلقة وإضاءة LED وتصميم فاخر",
       images: ["/images/black-marble-floating-vanity.jpg"],
@@ -513,7 +517,7 @@ export default function CollectionsPage() {
     },
     {
       id: 31,
-      title: "مجموعة BEVELLED الأصفر الزاهي",
+      title: "BEVELLED الأصفر الزاهي",
       category: "bathroom",
       description: "بلاط BEVELLED أصفر زاهي (10×30 سم) مثالي للمطابخ العصرية، يضفي إشراقاً وحيوية على المساحة",
       images: ["/images/bevelled-yellow-kitchen.jpg"],
@@ -524,7 +528,7 @@ export default function CollectionsPage() {
     },
     {
       id: 32,
-      title: "مجموعة BEVELLED الأحمر الدموي",
+      title: "BEVELLED الأحمر الدموي",
       category: "bathroom",
       description: "بلاط BEVELLED أحمر عميق (10×30 سم) يضفي دراما وأناقة على المطابخ والحمامات الفاخرة",
       images: ["/images/bevelled-blood-red-kitchen.jpg"],
@@ -535,7 +539,7 @@ export default function CollectionsPage() {
     },
     {
       id: 33,
-      title: "مجموعة BEVELLED الأزرق الملكي",
+      title: "BEVELLED الأزرق الملكي",
       category: "bathroom",
       description: "بلاط BEVELLED أزرق ملكي (10×30 سم) مثالي للحمامات وغرف الغسيل العصرية مع لمسة كلاسيكية",
       images: ["/images/bevelled-blue-bathroom.jpg"],
@@ -546,7 +550,7 @@ export default function CollectionsPage() {
     },
     {
       id: 34,
-      title: "مجموعة BEVELLED الأخضر الواحي",
+      title: "BEVELLED الأخضر الواحي",
       category: "bathroom",
       description: "بلاط BEVELLED أخضر واحي (10×30 سم) بنمط هيرنجبون، يجمع بين الطبيعة والأناقة العصرية",
       images: ["/images/bevelled-oasis-green-kitchen.jpg"],
@@ -557,7 +561,7 @@ export default function CollectionsPage() {
     },
     {
       id: 35,
-      title: "مجموعة BEVELLED البرتقالي النابض",
+      title: "BEVELLED البرتقالي النابض",
       category: "bathroom",
       description: "بلاط BEVELLED برتقالي نابض بالحياة (10×30 سم) يضفي دفئاً وحيوية على المساحات الداخلية",
       images: ["/images/bevelled-orange-kitchen.jpg"],
@@ -568,7 +572,7 @@ export default function CollectionsPage() {
     },
     {
       id: 36,
-      title: "مجموعة مدافئ المناشف الإسبانية الفاخرة",
+      title: "مدافئ المناشف الإسبانية الفاخرة",
       category: "heating",
       description: "مدافئ مناشف إسبانية فاخرة بتصاميم متنوعة: أبيض، ذهبي، أسود، وكروم مع ضمان الجودة الأوروبية",
       images: ["/images/spanish-luxury-towel-warmers.jpg"],
@@ -579,7 +583,7 @@ export default function CollectionsPage() {
     },
     {
       id: 37,
-      title: "مجموعة BEVELLED الأسود الأنيق",
+      title: "BEVELLED الأسود الأنيق",
       category: "bathroom",
       description: "بلاط BEVELLED أسود أنيق (10×30 سم) مع حوض أسود عصري، مثالي للحمامات المعاصرة والمينيماليست",
       images: ["/images/bevelled-black-bathroom.jpg"],
@@ -590,7 +594,7 @@ export default function CollectionsPage() {
     },
     {
       id: 38,
-      title: "مجموعة LAND SENSE البيج الطبيعي",
+      title: "LAND SENSE البيج الطبيعي",
       category: "cladding",
       description:
         "كسوة جدران حجرية طبيعية من MAHDY STONE بلون بيج دافئ، تضفي لمسة طبيعية وأناقة كلاسيكية على المساحات الداخلية والخارجية",
@@ -602,7 +606,7 @@ export default function CollectionsPage() {
     },
     {
       id: 39,
-      title: "مجموعة الحمامات الرمادية المتكاملة",
+      title: "الحمامات الرمادية المتكاملة",
       category: "bathroom",
       description: "حمام متكامل بتصميم رمادي عصري مع كابينة دش زجاجية وخزانة خشبية وإضاءة LED، من تنفيذ فيلا روزا",
       images: ["/images/modern-grey-bathroom-complete.jpg"],
@@ -613,7 +617,7 @@ export default function CollectionsPage() {
     },
     {
       id: 40,
-      title: "مجموعة ART BRICK الرمادي",
+      title: "ART BRICK الرمادي",
       category: "cladding",
       description: "كسوة جدران بتصميم الطوب الفني الرمادي من MAHDY STONE، مثالية للتصاميم الصناعية والعصرية",
       images: ["/images/art-brick-grey-stone.jpg"],
@@ -624,7 +628,7 @@ export default function CollectionsPage() {
     },
     {
       id: 41,
-      title: "مجموعة الرخام الأبيض مع الحوض الأسود",
+      title: "الرخام الأبيض مع الحوض الأسود",
       category: "bathroom",
       description: "حمام فاخر بجدران رخامية بيضاء مع حوض أسود دائري ومرآة LED، يجمع بين الكلاسيكية والعصرية",
       images: ["/images/white-marble-black-basin.jpg"],
@@ -635,7 +639,7 @@ export default function CollectionsPage() {
     },
     {
       id: 42,
-      title: "مجموعة الحمامات البيج مع اللمسات الذهبية",
+      title: "الحمامات البيج مع اللمسات الذهبية",
       category: "bathroom",
       description: "حمام أنيق بألوان بيج دافئة مع حوض أبيض وصنابير ذهبية ونباتات طبيعية وإضاءة دافئة",
       images: ["/images/beige-bathroom-gold-accents.jpg"],
@@ -646,7 +650,7 @@ export default function CollectionsPage() {
     },
     {
       id: 43,
-      title: "مجموعة الأحواض المزدوجة الرمادية",
+      title: "الأحواض المزدوجة الرمادية",
       category: "faucets",
       description: "طاولة حمام رمادية عصرية مع حوضين أبيضين دائريين ومرآة LED، مثالية للحمامات الرئيسية",
       images: ["/images/double-basin-grey-vanity.jpg"],
@@ -657,7 +661,7 @@ export default function CollectionsPage() {
     },
     {
       id: 44,
-      title: "مجموعة LAND SENSE المختلط",
+      title: "LAND SENSE المختلط",
       category: "cladding",
       description: "كسوة جدران حجرية مختلطة من MAHDY STONE بألوان ترابية دافئة وأحجام متنوعة، تضفي طابعاً طبيعياً مميزاً",
       images: ["/images/land-sense-medely-stone.jpg"],
@@ -668,7 +672,7 @@ export default function CollectionsPage() {
     },
     {
       id: 45,
-      title: "مجموعة ART BRICK الأحمر الكلاسيكي",
+      title: "ART BRICK الأحمر الكلاسيكي",
       category: "cladding",
       description: "كسوة جدران بتصميم الطوب الأحمر التقليدي من MAHDY STONE، مثالية للتصاميم الكلاسيكية والتراثية",
       images: ["/images/art-brick-red-stone.jpg"],
@@ -683,179 +687,196 @@ export default function CollectionsPage() {
     return activeCategory === "all" || collection.category === activeCategory
   })
 
-  // Separate featured and regular categories for better organization
   const featuredCategories = categories.filter((cat) => cat.featured)
   const regularCategories = categories.filter((cat) => !cat.featured)
 
   return (
-    <div className="min-h-screen" dir="rtl">
+    <div className="min-h-screen pb-20 lg:pb-0" dir="rtl">
       <Navigation />
 
-      {/* Compact Hero Section - Products Visible Immediately */}
-      <section className="pt-32 pb-12 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 badge-glass px-6 py-3 text-base font-semibold rounded-full">مجموعاتنا المميزة</Badge>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-stone-light arabic-text-bold">
+      {/* Mobile-First Hero Section - Much Shorter */}
+      <section className="pt-32 pb-4 px-4 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-4">
+            <Badge className="mb-2 badge-glass px-4 py-2 text-sm font-semibold rounded-full">مجموعاتنا المميزة</Badge>
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-2 text-stone-light arabic-text-bold leading-tight">
               بلاط وتجهيزات فاخرة
             </h1>
-            <p className="text-xl text-stone-muted max-w-3xl mx-auto leading-relaxed arabic-text">
-              اكتشف مجموعاتنا المتنوعة من البلاط البورسلان الإسباني وتجهيزات الحمامات من أرقى الماركات العالمية
+            <p className="text-sm sm:text-base text-stone-muted max-w-2xl mx-auto leading-relaxed arabic-text">
+              اكتشف مجموعاتنا المتنوعة من البلاط البورسلان الإسباني وتجهيزات الحمامات
             </p>
-          </div>
-
-          {/* Compact Category Filters */}
-          <div className="glass-card rounded-2xl p-6 shadow-xl mb-8">
-            {/* Featured Categories First */}
-            <div className="flex flex-wrap gap-3 justify-center mb-4">
-              {featuredCategories.map((category) => {
-                const Icon = category.icon
-                return (
-                  <Button
-                    key={category.id}
-                    variant={activeCategory === category.id ? "default" : "outline"}
-                    onClick={() => setActiveCategory(category.id)}
-                    className={`rounded-full px-6 py-3 flex items-center space-x-2 text-base font-semibold ${
-                      activeCategory === category.id
-                        ? "btn-gold shadow-lg scale-105"
-                        : "glass-semi border-white/30 hover:border-amber-500 text-white hover:scale-105"
-                    } transition-all duration-300`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    <span className="arabic-text">{category.name}</span>
-                  </Button>
-                )
-              })}
-            </div>
-
-            {/* Regular Categories */}
-            <div className="flex flex-wrap gap-2 justify-center">
-              {regularCategories.map((category) => {
-                const Icon = category.icon
-                return (
-                  <Button
-                    key={category.id}
-                    variant={activeCategory === category.id ? "default" : "outline"}
-                    onClick={() => setActiveCategory(category.id)}
-                    className={`rounded-full px-4 py-2 flex items-center space-x-2 text-sm font-semibold ${
-                      activeCategory === category.id
-                        ? "btn-gold shadow-lg"
-                        : "glass-semi border-white/20 hover:border-amber-400 text-white/80 hover:text-white"
-                    } transition-all duration-300`}
-                  >
-                    <Icon className="w-4 h-4" />
-                    <span className="arabic-text">{category.name}</span>
-                  </Button>
-                )
-              })}
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Collections Grid - Immediately Visible */}
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Category Info */}
-          <div className="text-center mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-3 text-stone-light arabic-text-bold">
-              {categories.find((cat) => cat.id === activeCategory)?.name || "جميع المنتجات"}
-            </h2>
-            <p className="text-lg text-stone-muted arabic-text">{filteredCollections.length} منتج متاح في هذه الفئة</p>
+      {/* Mobile-Optimized Category Filters */}
+      <section className="px-4 mb-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Featured Categories - Card Style */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+            {featuredCategories.map((category) => {
+              const Icon = category.icon
+              const isActive = activeCategory === category.id
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`relative overflow-hidden rounded-xl p-4 transition-all duration-300 ${
+                    isActive ? "scale-105 shadow-2xl" : "hover:scale-102 shadow-lg"
+                  }`}
+                >
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${category.color} ${isActive ? "opacity-100" : "opacity-70"}`}
+                  ></div>
+                  <div className="relative z-10 text-center">
+                    <Icon className="w-6 h-6 mx-auto mb-2 text-white" />
+                    <h3 className="text-white font-bold arabic-text text-sm">{category.name}</h3>
+                    {isActive && (
+                      <div className="mt-1">
+                        <Badge className="bg-white/20 text-white border-0 text-xs">نشط</Badge>
+                      </div>
+                    )}
+                  </div>
+                </button>
+              )
+            })}
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Regular Categories - Horizontal Scroll */}
+          <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+            {regularCategories.map((category) => {
+              const Icon = category.icon
+              const isActive = activeCategory === category.id
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`flex-shrink-0 flex items-center gap-2 px-4 py-3 rounded-2xl transition-all duration-300 ${
+                    isActive
+                      ? "bg-amber-500 text-black shadow-lg scale-105"
+                      : "glass-semi border-white/20 text-white hover:border-amber-400"
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span className="arabic-text whitespace-nowrap font-semibold text-sm">{category.name}</span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile-Optimized Collections Grid */}
+      <section className="px-4 pb-16">
+        <div className="max-w-7xl mx-auto">
+          {/* Category Info */}
+          <div className="text-center mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold mb-1 text-stone-light arabic-text-bold">
+              {categories.find((cat) => cat.id === activeCategory)?.name || "جميع المنتجات"}
+            </h2>
+            <p className="text-sm text-stone-muted arabic-text">{filteredCollections.length} منتج متاح</p>
+          </div>
+
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCollections.map((collection, index) => (
               <Card
                 key={collection.id}
-                className="group hover-lift glass-card border-0 shadow-xl hover:shadow-3xl transition-all duration-500 overflow-hidden card-hover"
+                className="group glass-card border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden"
               >
                 <div className="relative">
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-44 sm:h-52 overflow-hidden">
                     <Image
                       src={collection.images[0] || "/placeholder.svg"}
                       alt={collection.title}
-                      width={600}
-                      height={400}
+                      width={400}
+                      height={300}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
 
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
                     {/* Badges */}
-                    <div className="absolute top-4 right-4 flex flex-col gap-2">
+                    <div className="absolute top-3 right-3 flex flex-col gap-2">
                       {collection.isPopular && (
-                        <Badge className="bg-red-500 text-white border-0 px-3 py-2 font-semibold">
-                          <Star className="w-4 h-4 ml-1" />
+                        <Badge className="bg-red-500 text-white border-0 px-2 py-1 text-xs font-bold shadow-lg">
+                          <Star className="w-3 h-3 ml-1" />
                           الأكثر طلباً
                         </Badge>
                       )}
                       {collection.isNew && (
-                        <Badge className="bg-green-500 text-white border-0 px-3 py-2 font-semibold">جديد</Badge>
+                        <Badge className="bg-green-500 text-white border-0 px-2 py-1 text-xs font-bold shadow-lg">
+                          جديد
+                        </Badge>
                       )}
                     </div>
 
+                    {/* Rating */}
+                    <div className="absolute top-3 left-3">
+                      <div className="flex items-center gap-1 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1">
+                        <Star className="w-3 h-3 text-yellow-400 fill-current" />
+                        <span className="text-white text-xs font-bold">{collection.rating}</span>
+                      </div>
+                    </div>
+
                     {/* Hover Actions */}
-                    <div className="absolute bottom-4 left-4 right-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Button size="lg" className="flex-1 btn-white font-bold">
-                        <Eye className="w-5 h-5 ml-2" />
+                    <div className="absolute bottom-3 left-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Button size="sm" className="flex-1 btn-white font-bold text-sm h-10">
+                        <Eye className="w-4 h-4 ml-1" />
                         عرض
                       </Button>
-                      <Button size="lg" className="btn-outline-light">
-                        <Heart className="w-5 h-5" />
+                      <Button size="sm" className="btn-outline-light h-10 w-10 p-0">
+                        <Heart className="w-4 h-4" />
                       </Button>
                     </div>
                   </div>
                 </div>
 
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors arabic-text-bold">
-                      {collection.title}
-                    </h3>
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-sm font-medium text-gray-300">{collection.rating}</span>
-                      <span className="text-xs text-gray-400">({collection.reviews})</span>
-                    </div>
-                  </div>
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors arabic-text-bold leading-tight mb-2">
+                    {collection.title}
+                  </h3>
 
-                  <p className="text-stone-muted mb-4 leading-relaxed arabic-text">{collection.description}</p>
+                  <p className="text-stone-muted mb-3 leading-relaxed arabic-text text-sm line-clamp-2">
+                    {collection.description}
+                  </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {collection.features.map((feature, idx) => (
+                  {/* Features */}
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {collection.features.slice(0, 3).map((feature, idx) => (
                       <Badge
                         key={idx}
                         variant="outline"
-                        className="border-amber-400/50 text-amber-400 bg-amber-400/10 font-semibold text-xs"
+                        className="border-amber-400/50 text-amber-400 bg-amber-400/10 font-semibold text-xs px-2 py-1"
                       >
                         {feature}
                       </Badge>
                     ))}
                   </div>
 
-                  <div className="flex justify-center">
-                    <Button className="btn-gold rounded-full px-6 py-3 group-hover:scale-105 transition-all duration-300 arabic-text font-bold">
-                      اطلب الآن
-                      <ArrowRight className="w-4 h-4 mr-2" />
-                    </Button>
-                  </div>
+                  {/* CTA Button */}
+                  <Button className="w-full btn-gold rounded-xl py-3 group-hover:scale-105 transition-all duration-300 arabic-text font-bold">
+                    اطلب الآن
+                    <ArrowRight className="w-4 h-4 mr-2" />
+                  </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
 
+          {/* Empty State */}
           {filteredCollections.length === 0 && (
             <div className="text-center py-16">
-              <div className="glass-card rounded-3xl p-12">
-                <div className="w-24 h-24 glass-card rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Grid className="w-12 h-12 text-amber-400" />
+              <div className="glass-card rounded-3xl p-8">
+                <div className="w-20 h-20 glass-card rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Grid className="w-10 h-10 text-amber-400" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4 arabic-text-bold">لم نجد نتائج</h3>
-                <p className="text-stone-muted mb-8 text-lg arabic-text max-w-2xl mx-auto">
-                  جرب اختيار فئة أخرى لعرض المنتجات المتاحة
-                </p>
+                <p className="text-stone-muted mb-8 arabic-text">جرب اختيار فئة أخرى لعرض المنتجات المتاحة</p>
                 <Button
                   onClick={() => setActiveCategory("porcelain")}
-                  className="btn-gold rounded-full px-8 py-3 text-lg font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 arabic-text"
+                  className="btn-gold rounded-xl px-8 py-3 font-bold arabic-text"
                 >
                   عرض البلاط البورسلان
                 </Button>
@@ -865,29 +886,29 @@ export default function CollectionsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <div className="glass-dark rounded-3xl p-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white arabic-text-bold">هل وجدت المنتج المثالي؟</h2>
-            <p className="text-lg mb-12 text-white/90 arabic-text max-w-2xl mx-auto">
+      {/* Mobile-Optimized CTA Section */}
+      <section className="px-4 pb-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="glass-dark rounded-3xl p-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white arabic-text-bold">هل وجدت المنتج المثالي؟</h2>
+            <p className="text-base mb-6 text-white/90 arabic-text leading-relaxed">
               تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/contact">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="btn-gold px-10 py-4 rounded-full text-lg font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 arabic-text"
+                  className="w-full btn-gold px-8 py-4 rounded-2xl text-lg font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 arabic-text"
                 >
                   احجز استشارة مجانية
                   <ArrowRight className="w-5 h-5 mr-2" />
                 </Button>
               </Link>
-              <Link href="/services">
+              <Link href="/services" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="btn-outline-light px-10 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:scale-105 arabic-text"
+                  className="w-full btn-outline-light px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 arabic-text"
                 >
                   شاهد خدماتنا
                 </Button>

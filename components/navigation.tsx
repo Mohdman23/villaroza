@@ -38,7 +38,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -53,66 +53,70 @@ export default function Navigation() {
   ]
 
   return (
-    <nav
-      className="fixed top-0 w-full z-50 transition-all duration-300 glass-nav shadow-xl"
-      dir={isRTL ? "rtl" : "ltr"}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-4 group">
-            <div className="text-3xl font-bold nav-link group-hover:text-amber-600 transition-colors arabic-text-bold">
-              فيلا روزا
+    <>
+      {/* Mobile-First Navigation */}
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? "glass-nav shadow-2xl py-2" : "glass-nav shadow-xl py-4"
+        }`}
+        dir={isRTL ? "rtl" : "ltr"}
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between items-center h-16">
+            {/* Mobile-Optimized Logo */}
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="text-2xl sm:text-3xl font-bold nav-link group-hover:text-amber-400 transition-colors arabic-text-bold">
+                فيلا روزا
+              </div>
+              <div className="hidden sm:block text-sm text-gray-300 font-semibold">Villa Roza</div>
+            </Link>
+
+            {/* Mobile Menu Button & Language Toggle */}
+            <div className="flex items-center gap-3">
+              <Button
+                onClick={() => setLanguage(language === "ar" ? "en" : "ar")}
+                variant="outline"
+                size="sm"
+                className="h-10 w-16 border-white/30 hover:bg-white/10 bg-black/50 font-semibold text-white text-xs"
+              >
+                <Globe className="w-4 h-4 mr-1" />
+                {language === "ar" ? "EN" : "عربي"}
+              </Button>
+
+              <Button
+                variant="outline"
+                size="sm"
+                className="lg:hidden h-10 w-10 border-white/30 hover:bg-white/10 bg-black/50 text-white p-0"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </Button>
             </div>
-            <div className="hidden sm:block text-lg text-gray-300 font-semibold">Villa Roza</div>
-          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href
-              return (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className={`nav-link px-6 py-3 rounded-full font-bold transition-all duration-300 arabic-text text-lg ${
-                    isActive ? "active bg-amber-600/20 text-amber-400" : "hover:bg-white/10"
-                  }`}
-                >
-                  {t.nav[item.key as keyof typeof t.nav]}
-                </Link>
-              )
-            })}
-          </div>
-
-          {/* Language Toggle & Mobile Menu */}
-          <div className="flex items-center gap-4">
-            <Button
-              onClick={() => setLanguage(language === "ar" ? "en" : "ar")}
-              variant="outline"
-              size="sm"
-              className="flex items-center gap-2 border-white/30 hover:bg-white/10 bg-black/50 font-semibold text-white"
-            >
-              <Globe className="w-5 h-5" />
-              <span>{language === "ar" ? "EN" : "عربي"}</span>
-            </Button>
-
-            {/* Mobile Menu Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              className="lg:hidden border-white/30 hover:bg-white/10 bg-black/50 text-white"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </Button>
+            {/* Desktop Navigation - Hidden on Mobile */}
+            <div className="hidden lg:flex items-center gap-6">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href
+                return (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    className={`nav-link px-4 py-2 rounded-full font-bold transition-all duration-300 arabic-text ${
+                      isActive ? "active bg-amber-600/20 text-amber-400" : "hover:bg-white/10"
+                    }`}
+                  >
+                    {t.nav[item.key as keyof typeof t.nav]}
+                  </Link>
+                )
+              })}
+            </div>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 glass-nav border-t border-white/10 shadow-xl">
-            <div className="px-4 py-8 space-y-4">
+          <div className="lg:hidden fixed inset-0 top-16 bg-black/90 backdrop-blur-xl z-40">
+            <div className="p-6 space-y-4">
               {navItems.map((item) => {
                 const isActive = pathname === item.href
                 return (
@@ -120,11 +124,15 @@ export default function Navigation() {
                     key={item.key}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center gap-4 px-6 py-4 rounded-lg transition-all duration-300 arabic-text font-semibold text-lg ${
-                      isActive ? "bg-amber-600/20 text-amber-400" : "text-white hover:bg-white/10"
+                    className={`flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 arabic-text font-bold text-lg ${
+                      isActive
+                        ? "bg-amber-600/20 text-amber-400 shadow-lg"
+                        : "text-white hover:bg-white/10 active:bg-white/20"
                     }`}
                   >
-                    <item.icon className="w-6 h-6" />
+                    <div className={`p-2 rounded-xl ${isActive ? "bg-amber-400/20" : "bg-white/10"}`}>
+                      <item.icon className="w-6 h-6" />
+                    </div>
                     <span>{t.nav[item.key as keyof typeof t.nav]}</span>
                   </Link>
                 )
@@ -132,7 +140,30 @@ export default function Navigation() {
             </div>
           </div>
         )}
+      </nav>
+
+      {/* Mobile Bottom Navigation */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 glass-nav border-t border-white/10">
+        <div className="flex justify-around items-center py-2">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href
+            return (
+              <Link
+                key={item.key}
+                href={item.href}
+                className={`flex flex-col items-center p-2 rounded-xl transition-all duration-300 ${
+                  isActive ? "text-amber-400" : "text-white/70 hover:text-white"
+                }`}
+              >
+                <div className={`p-2 rounded-lg ${isActive ? "bg-amber-400/20" : ""}`}>
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <span className="text-xs arabic-text font-semibold mt-1">{t.nav[item.key as keyof typeof t.nav]}</span>
+              </Link>
+            )
+          })}
+        </div>
       </div>
-    </nav>
+    </>
   )
 }

@@ -77,14 +77,14 @@ export default function ServicesPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-32 pb-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 badge-glass px-8 py-4 text-lg font-semibold rounded-full">خدماتنا المتخصصة</Badge>
-            <h1 className="text-7xl lg:text-8xl font-bold mb-8 text-stone-light arabic-text-bold">
+          <div className="text-center mb-8">
+            <Badge className="mb-3 badge-glass px-4 py-2 text-sm font-semibold rounded-full">خدماتنا المتخصصة</Badge>
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 text-stone-light arabic-text-bold">
               بلاط وتجهيزات متخصصة
             </h1>
-            <p className="text-2xl text-stone-muted max-w-4xl mx-auto leading-relaxed arabic-text">
+            <p className="text-base sm:text-lg text-stone-muted max-w-3xl mx-auto leading-relaxed arabic-text">
               نوفر أجود أنواع البلاط والأرضيات وتجهيزات الحمامات الفاخرة من أرقى الماركات العالمية مع خدمات تركيب متخصصة
             </p>
           </div>
@@ -92,11 +92,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Detailed Section */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {services.map((service, index) => (
-            <div key={index} className={`mb-32 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div key={index} className={`mb-16 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className={`${isVisible ? "animate-fade-in" : "opacity-0"}`}>
                   <div className="relative group">
                     <div className="glass-card rounded-3xl shadow-2xl overflow-hidden card-hover">
@@ -112,62 +112,63 @@ export default function ServicesPage() {
                 </div>
 
                 <div className={`${isVisible ? "animate-fade-in" : "opacity-0"}`}>
-                  <div className="glass-card w-24 h-24 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                    <service.icon className="w-12 h-12 text-amber-400" />
+                  <div className="glass-card w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                    <service.icon className="w-8 h-8 text-amber-400" />
                   </div>
 
-                  <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-stone-light arabic-text-bold">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 text-stone-light arabic-text-bold">
                     {service.title}
                   </h2>
 
-                  <p className="text-xl text-stone-accent mb-6 font-bold arabic-text">{service.subtitle}</p>
+                  <p className="text-sm text-stone-accent mb-3 font-bold arabic-text">{service.subtitle}</p>
 
-                  <p className="text-lg text-stone-muted mb-8 leading-relaxed arabic-text">{service.description}</p>
+                  <p className="text-sm sm:text-base text-stone-muted mb-4 leading-relaxed arabic-text">
+                    {service.description}
+                  </p>
 
-                  <div className="grid md:grid-cols-2 gap-8 mb-8">
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <h4 className="text-xl font-bold text-stone-light mb-4 arabic-text-bold">المميزات الرئيسية:</h4>
-                      <div className="space-y-4">
+                      <h4 className="text-lg font-bold text-stone-light mb-3 arabic-text-bold">المميزات الرئيسية:</h4>
+                      <div className="space-y-3">
                         {service.features.slice(0, 3).map((feature, idx) => (
                           <div key={idx} className="flex items-center space-x-3">
-                            <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                            <span className="text-stone-muted font-semibold arabic-text">{feature}</span>
+                            <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                            <span className="text-stone-muted font-semibold arabic-text text-sm">{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold text-stone-light mb-4 arabic-text-bold">معلومات الخدمة:</h4>
-                      <div className="space-y-4">
+                      <h4 className="text-lg font-bold text-stone-light mb-3 arabic-text-bold">معلومات الخدمة:</h4>
+                      <div className="space-y-3">
                         <div className="flex items-center space-x-3">
-                          <Clock className="w-6 h-6 text-amber-400 flex-shrink-0" />
-                          <span className="text-stone-muted font-semibold arabic-text">المدة: {service.duration}</span>
+                          <Clock className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                          <span className="text-stone-muted font-semibold arabic-text text-sm">
+                            المدة: {service.duration}
+                          </span>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <Star className="w-6 h-6 text-yellow-400 flex-shrink-0" />
-                          <span className="text-stone-muted font-semibold arabic-text">{service.price}</span>
+                          <Star className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                          <span className="text-stone-muted font-semibold arabic-text text-sm">{service.price}</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <Link href="/contact">
                       <Button
                         size="lg"
-                        className="btn-gold px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 arabic-text"
+                        className="btn-gold px-8 py-3 rounded-2xl font-bold transition-all duration-300 hover:scale-105 arabic-text"
                       >
-                        <Phone className="w-6 h-6 ml-3" />
+                        <Phone className="w-5 h-5 ml-2" />
                         اطلب الخدمة الآن
                       </Button>
                     </Link>
                     <Link href="/collections">
-                      <Button
-                        size="lg"
-                        className="btn-outline-light px-10 py-4 rounded-full font-bold text-lg arabic-text"
-                      >
-                        <Eye className="w-6 h-6 ml-3" />
+                      <Button size="lg" className="btn-outline-light px-8 py-3 rounded-2xl font-bold arabic-text">
+                        <Eye className="w-5 h-5 ml-2" />
                         شاهد المجموعات
                       </Button>
                     </Link>
@@ -180,16 +181,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Additional Features Section */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 badge-glass px-8 py-4 text-lg font-semibold rounded-full">مميزات إضافية</Badge>
-            <h2 className="text-5xl lg:text-6xl font-bold mb-8 text-stone-light arabic-text-bold">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 badge-glass px-4 py-2 text-sm font-semibold rounded-full">مميزات إضافية</Badge>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-stone-light arabic-text-bold">
               لماذا تختار فيلا روزا؟
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "استشارة مجانية",
@@ -207,19 +208,19 @@ export default function ServicesPage() {
                 image: "/images/black-marble-suite.jpg",
               },
             ].map((feature, index) => (
-              <div key={index} className="glass-card rounded-3xl overflow-hidden shadow-xl card-hover">
-                <div className="relative h-48">
+              <div key={index} className="glass-card rounded-2xl overflow-hidden shadow-xl">
+                <div className="relative h-32">
                   <Image
                     src={feature.image || "/placeholder.svg"}
                     alt={feature.title}
                     width={400}
-                    height={300}
+                    height={200}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-white mb-4 arabic-text-bold">{feature.title}</h3>
-                  <p className="text-stone-muted arabic-text text-lg">{feature.description}</p>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-white mb-2 arabic-text-bold">{feature.title}</h3>
+                  <p className="text-stone-muted arabic-text text-sm">{feature.description}</p>
                 </div>
               </div>
             ))}
@@ -228,30 +229,30 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <div className="glass-dark rounded-3xl p-20">
-            <h2 className="text-5xl lg:text-6xl font-bold mb-10 text-white arabic-text-bold">
+          <div className="glass-dark rounded-3xl p-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white arabic-text-bold">
               هل أنت مستعد لبدء مشروعك؟
             </h2>
-            <p className="text-xl mb-16 text-white/90 arabic-text max-w-3xl mx-auto">
+            <p className="text-lg mb-8 text-white/90 arabic-text max-w-3xl mx-auto">
               تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="btn-gold px-12 py-6 rounded-full text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 arabic-text"
+                  className="btn-gold px-8 py-4 rounded-2xl text-lg font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 arabic-text"
                 >
                   احجز استشارة مجانية
-                  <ArrowRight className="w-6 h-6 mr-3" />
+                  <ArrowRight className="w-5 h-5 mr-2" />
                 </Button>
               </Link>
               <Link href="/collections">
                 <Button
                   size="lg"
-                  className="btn-outline-light px-12 py-6 rounded-full text-xl font-bold transition-all duration-300 hover:scale-105 arabic-text"
+                  className="btn-outline-light px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 hover:scale-105 arabic-text"
                 >
                   شاهد مجموعاتنا
                 </Button>
