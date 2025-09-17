@@ -142,23 +142,33 @@ export default function Navigation() {
         )}
       </nav>
 
-      {/* Mobile Bottom Navigation */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 glass-nav border-t border-white/10">
-        <div className="flex justify-around items-center py-2">
+      {/* Mobile Bottom Navigation - TRULY STICKY */}
+      <div
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-50 glass-nav border-t border-white/10"
+        style={{
+          paddingBottom: "env(safe-area-inset-bottom)",
+          position: "fixed",
+          bottom: "0",
+          width: "100%",
+        }}
+      >
+        <div className="flex justify-around items-center py-2 px-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href
             return (
               <Link
                 key={item.key}
                 href={item.href}
-                className={`flex flex-col items-center p-2 rounded-xl transition-all duration-300 ${
+                className={`flex flex-col items-center p-2 rounded-xl transition-all duration-300 min-w-0 flex-1 ${
                   isActive ? "text-amber-400" : "text-white/70 hover:text-white"
                 }`}
               >
                 <div className={`p-2 rounded-lg ${isActive ? "bg-amber-400/20" : ""}`}>
                   <item.icon className="w-5 h-5" />
                 </div>
-                <span className="text-xs arabic-text font-semibold mt-1">{t.nav[item.key as keyof typeof t.nav]}</span>
+                <span className="text-xs arabic-text font-semibold mt-1 truncate">
+                  {t.nav[item.key as keyof typeof t.nav]}
+                </span>
               </Link>
             )
           })}
