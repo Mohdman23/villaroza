@@ -334,7 +334,9 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
                 <div className="text-center">
                   <Phone className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
-                  <p className="text-white/90">+962 7 9658 9330</p>
+                  <p className="text-white/90" dir="ltr">
+                    +962 7 9658 9330
+                  </p>
                 </div>
                 <div className="text-center">
                   <Mail className="w-6 h-6 mx-auto mb-2 text-yellow-400" />

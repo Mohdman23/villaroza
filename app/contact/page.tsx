@@ -63,6 +63,7 @@ export default function ContactPage() {
       icon: Phone,
       title: "اتصل بنا",
       details: ["+962 7 9658 9330", "+962 6 123 4567"],
+      isPhone: true, // Add this flag
     },
     {
       icon: Mail,
@@ -125,7 +126,7 @@ export default function ContactPage() {
                   <h3 className="text-sm font-bold mb-2 text-white arabic-text-bold">{info.title}</h3>
                   <div className="space-y-1">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-stone-muted arabic-text text-xs">
+                      <p key={idx} className="text-stone-muted arabic-text text-xs" dir={info.isPhone ? "ltr" : "rtl"}>
                         {detail}
                       </p>
                     ))}
@@ -176,6 +177,7 @@ export default function ContactPage() {
                           onChange={handleInputChange}
                           className="input-glass w-full px-4 py-3 rounded-lg"
                           placeholder="+962 7X XXX XXXX"
+                          dir="ltr"
                         />
                       </div>
                     </div>
