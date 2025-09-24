@@ -107,7 +107,7 @@ export default function HomePage() {
       description: "بلاط بورسلان عالي الجودة بتصاميم عصرية من أفضل المصانع العالمية",
       icon: Home,
       features: ["بورسلان إسباني", "مقاسات متنوعة", "تصاميم عصرية"],
-      image: "/images/porcelain-display.jpg",
+      image: "/images/modernbathroomwithporcelaintiles.jpeg",
       color: "from-blue-500 to-purple-600",
     },
     {
@@ -115,7 +115,7 @@ export default function HomePage() {
       description: "تصاميم حمامات عصرية مع مغاسل وأحواض رخامية وكريستالية فاخرة",
       icon: Palette,
       features: ["أحواض رخامية", "مغاسل كريستالية", "تصاميم معاصرة"],
-      image: "/images/modern-grey-bathroom-complete.jpg",
+      image: "/images/lightmarblebathroomcomplete.jpeg",
       color: "from-emerald-500 to-teal-600",
     },
     {
@@ -123,7 +123,7 @@ export default function HomePage() {
       description: "مجموعة شاملة من بلاط BEVELLED بألوان متنوعة للمطابخ والحمامات",
       icon: Lightbulb,
       features: ["ألوان متنوعة", "تشطيب مشطوف", "جودة عالية"],
-      image: "/images/bevelled-white-kitchen.jpg",
+      image: "/images/modernbathroomcomplete4.jpeg",
       color: "from-orange-500 to-red-600",
     },
   ]
@@ -258,9 +258,6 @@ export default function HomePage() {
                     height={300}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}
-                  ></div>
                   <div className="absolute top-4 right-4">
                     <div className="glass-card w-12 h-12 rounded-xl flex items-center justify-center">
                       <service.icon className="w-6 h-6 text-amber-400" />
