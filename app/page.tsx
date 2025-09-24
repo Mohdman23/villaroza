@@ -22,6 +22,7 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import Navigation from "@/components/navigation"
+import ImageSlider from "@/components/image-slider"
 
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -42,6 +43,64 @@ export default function HomePage() {
     { number: "50+", label: "جائزة تميز", icon: Star },
   ]
 
+  // Mobile Slider Data - Scene Descriptive Images
+  const mobileSliderItems = [
+    {
+      image: "/images/beige-bathroom-gold-accents.jpg",
+      title: "حمام فاخر بالرخام البيج واللمسات الذهبية",
+      description: "تصميم حمام فاخر بالرخام البيج مع لمسات ذهبية أنيقة وتجهيزات عصرية"
+    },
+    {
+      image: "/images/modern-grey-bathroom-complete.jpg",
+      title: "حمام رمادي عصري متكامل",
+      description: "حمام رمادي عصري مع تجهيزات متكاملة وتصميم معاصر"
+    },
+    {
+      image: "/images/lightmarblebathroomcomplete.jpeg",
+      title: "حمام رخامي فاتح متكامل",
+      description: "حمام رخامي فاتح بتصميم متكامل مع تجهيزات فاخرة"
+    },
+    {
+      image: "/images/modernbathroomcomplete4.jpeg",
+      title: "حمام عصري متكامل",
+      description: "حمام عصري متكامل مع تجهيزات عصرية وتصميم أنيق"
+    },
+    {
+      image: "/images/whitesinkmodernbathroommodernmirrorovalLshapedbathroom.jpeg",
+      title: "حمام أبيض عصري على شكل L",
+      description: "حمام أبيض عصري بتصميم L مع مرآة بيضاوية ومغسلة عصرية"
+    }
+  ]
+
+  // Desktop Slider Data - Scene Descriptive Images
+  const desktopSliderItems = [
+    {
+      image: "/images/beige-bathroom-gold-accents.jpg",
+      title: "حمام فاخر بالرخام البيج واللمسات الذهبية",
+      description: "تصميم حمام فاخر بالرخام البيج مع لمسات ذهبية أنيقة وتجهيزات عصرية"
+    },
+    {
+      image: "/images/modern-grey-bathroom-complete.jpg",
+      title: "حمام رمادي عصري متكامل",
+      description: "حمام رمادي عصري مع تجهيزات متكاملة وتصميم معاصر"
+    },
+    {
+      image: "/images/lightmarblebathroomcomplete.jpeg",
+      title: "حمام رخامي فاتح متكامل",
+      description: "حمام رخامي فاتح بتصميم متكامل مع تجهيزات فاخرة"
+    },
+    {
+      image: "/images/modernbathroomcomplete4.jpeg",
+      title: "حمام عصري متكامل",
+      description: "حمام عصري متكامل مع تجهيزات عصرية وتصميم أنيق"
+    },
+    {
+      image: "/images/whitesinkmodernbathroommodernmirrorovalLshapedbathroom.jpeg",
+      title: "حمام أبيض عصري على شكل L",
+      description: "حمام أبيض عصري بتصميم L مع مرآة بيضاوية ومغسلة عصرية"
+    }
+  ]
+
   const services = [
     {
       title: "البلاط البورسلان الفاخر",
@@ -56,7 +115,7 @@ export default function HomePage() {
       description: "تصاميم حمامات عصرية مع مغاسل وأحواض رخامية وكريستالية فاخرة",
       icon: Palette,
       features: ["أحواض رخامية", "مغاسل كريستالية", "تصاميم معاصرة"],
-      image: "/images/luxury-black-marble-complete.jpg",
+      image: "/images/modern-grey-bathroom-complete.jpg",
       color: "from-emerald-500 to-teal-600",
     },
     {
@@ -116,6 +175,14 @@ export default function HomePage() {
                 العالمية
               </p>
 
+              {/* Mobile Image Slider - Only on Mobile, under description */}
+              <div className={`${isVisible ? "animate-fade-in" : "opacity-0"} mb-6 lg:hidden`}>
+                <ImageSlider 
+                  items={mobileSliderItems}
+                  className="w-full"
+                />
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 mb-6 justify-center lg:justify-start">
                 <Link href="/collections" className="w-full sm:w-auto">
                   <Button
@@ -152,23 +219,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Image */}
-            <div className={`${isVisible ? "animate-fade-in" : "opacity-0"} relative mt-8 lg:mt-0`}>
-              <div className="relative group">
-                <div className="glass-card rounded-3xl shadow-2xl overflow-hidden">
-                  <Image
-                    src="/images/porcelain-display.jpg"
-                    alt="Villa Roza Porcelain Display"
-                    width={600}
-                    height={500}
-                    className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <Badge className="badge-gold px-3 py-2 text-sm font-bold">بلاط بورسلان إسباني فاخر</Badge>
-                  </div>
-                </div>
-              </div>
+
+            {/* Desktop Image Slider - Only on Desktop */}
+            <div className={`${isVisible ? "animate-fade-in" : "opacity-0"} relative mt-8 lg:mt-0 hidden lg:block`}>
+              <ImageSlider 
+                items={desktopSliderItems}
+                className="w-full"
+              />
             </div>
           </div>
         </div>

@@ -115,7 +115,7 @@ export default function AboutPage() {
               <div className="relative group">
                 <div className="glass-card rounded-3xl shadow-2xl overflow-hidden card-hover">
                   <Image
-                    src="/images/luxury-black-marble-bathroom.jpg"
+                    src="/images/lightmarblebathroomcomplete.jpeg"
                     alt="Villa Roza Luxury Installation"
                     width={500}
                     height={600}
@@ -165,7 +165,7 @@ export default function AboutPage() {
               <div className="relative group">
                 <div className="glass-card rounded-3xl shadow-2xl overflow-hidden card-hover">
                   <Image
-                    src="/images/porcelain-display.jpg"
+                    src="/images/modernbathroomcomplete4.jpeg"
                     alt="Porcelain Display"
                     width={500}
                     height={600}

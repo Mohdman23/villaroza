@@ -83,9 +83,9 @@ export default function ContactPage() {
   ]
 
   const services = [
-    "بلاط المسابح مع مواد MAPEI",
-    "تجهيزات الحمامات الفاخرة",
-    "بلاط BEVELLED العصري",
+    "البلاط البورسلان الإسباني",
+    "الحمامات الرخامية الفاخرة",
+    "الحمامات العصرية",
     "موزاييك ALTOGLASS الإسباني",
     "أحواض وبطاريات الحمامات",
     "استشارات التصميم والتركيب",
@@ -251,7 +251,7 @@ export default function ContactPage() {
               <div className="relative group">
                 <div className="glass-card rounded-3xl shadow-2xl overflow-hidden card-hover">
                   <Image
-                    src="/images/bevelled-white-tiles.jpg"
+                    src="/images/fullmodernbathroomporcelaintileswhitesinkandmodernmirror.jpeg"
                     alt="Villa Roza Showroom"
                     width={500}
                     height={400}
