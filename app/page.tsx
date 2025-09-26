@@ -18,6 +18,8 @@ import {
   Users,
   Eye,
   CheckCircle,
+  Instagram,
+  Facebook,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -184,23 +186,35 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-6 justify-center lg:justify-start">
-                <Link href="/collections" className="w-full sm:w-auto">
+                <a 
+                  href="https://www.instagram.com/villarozajordan/?hl=en" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
                   <Button
                     size="lg"
                     className="w-full btn-gold px-8 py-4 rounded-2xl text-lg font-bold group shadow-2xl"
                   >
-                    <Eye className="w-5 h-5 ml-2" />
-                    اكتشف مجموعاتنا
+                    <Instagram className="w-5 h-5 ml-2" />
+                    تابعنا على إنستغرام
                     <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                </Link>
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto btn-outline-light px-8 py-4 rounded-2xl text-lg font-bold"
+                </a>
+                <a 
+                  href="https://www.facebook.com/villarozajo/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
                 >
-                  <Phone className="w-5 h-5 ml-2" />
-                  اتصل بنا
-                </Button>
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto btn-outline-light px-8 py-4 rounded-2xl text-lg font-bold"
+                  >
+                    <Facebook className="w-5 h-5 ml-2" />
+                    تابعنا على فيسبوك
+                  </Button>
+                </a>
               </div>
 
               {/* Mobile-Optimized Stats */}

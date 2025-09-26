@@ -89,7 +89,7 @@
 
 /* MUCH DARKER Stone Background with Overlay */
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/stone-wall-background.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/stone-wall-background.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -157,7 +157,7 @@ html {
 
 /* NO MORE WHITE CARDS - ONLY DARK GLASS */
 .glass-card {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
@@ -393,7 +393,7 @@ html {
 }
 
 .animate-fade-in {
-  animation: fade-in 20s ease-in-out infinite;
+  /* Animation disabled - manual control only */
 }
 
 /* MIND-BLOWING Gradient Text Animation */
