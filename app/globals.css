@@ -87,14 +87,22 @@
   --sidebar-ring: oklch(0.4 0.1 45);
 }
 
-/* MUCH DARKER Stone Background with Overlay */
+/* Optimized Stone Background with Fast Loading */
 body {
+  /* Fallback color while image loads */
+  background-color: #1a1a1a;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/stone-wall-background.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   min-height: 100vh;
+  /* Optimize for fast loading */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/images/stone-wall-background.png");
+  /* Progressive enhancement */
+  will-change: background-image;
 }
 
 html {
