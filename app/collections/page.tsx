@@ -1078,7 +1078,7 @@ export default function CollectionsPage() {
   }
 
               return (
-    <div className="min-h-screen pb-20 lg:pb-0" dir="rtl">
+    <div className="min-h-screen pb-8 lg:pb-0" dir="rtl">
       <Navigation />
 
       {/* Mobile-Optimized Hero Section */}
@@ -1123,7 +1123,7 @@ export default function CollectionsPage() {
                       className="input-glass w-full px-2.5 lg:px-3 py-2.5 lg:py-3 pr-8 lg:pr-10 rounded-lg text-xs lg:text-sm arabic-text focus:ring-2 focus:ring-amber-400"
                       dir="rtl"
                     />
-                  </div>
+          </div>
 
                   {/* Sort Dropdown */}
                   <div className="flex gap-1.5 lg:gap-2">
@@ -1162,17 +1162,17 @@ export default function CollectionsPage() {
                       <span className="text-white font-bold arabic-text text-sm">
                         {favorites.length} مفضل
                       </span>
-                    </div>
-                  )}
-                </div>
-              </div>
+                      </div>
+                    )}
+                  </div>
+          </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mobile-Optimized Sticky Filter Bar */}
-      <section className="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-md border-b border-white/10 px-4 py-3">
+      <section className="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-md border-b border-white/10 px-4 py-1 sm:py-3">
         <div className="max-w-7xl mx-auto">
           {/* Mobile Category Filter - Horizontal Scroll */}
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">

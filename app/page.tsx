@@ -155,7 +155,7 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="min-h-screen pb-20 lg:pb-0" dir="rtl">
+    <div className="min-h-screen pb-8 lg:pb-0" dir="rtl">
       <Navigation />
 
       {/* Mobile-First Hero Section */}

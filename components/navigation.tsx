@@ -79,7 +79,7 @@ export default function Navigation() {
       <nav
         ref={navRef}
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          isScrolled ? "glass-nav shadow-2xl py-2" : "glass-nav shadow-xl py-4"
+          isScrolled ? "glass-nav shadow-2xl py-0.5" : "glass-nav shadow-xl py-1 sm:py-4"
         }`}
         dir={isRTL ? "rtl" : "ltr"}
       >
@@ -141,7 +141,7 @@ export default function Navigation() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    className={`nav-link px-6 py-3 rounded-2xl font-bold transition-all duration-300 arabic-text group relative overflow-hidden ${
+                    className={`nav-link px-6 py-1 sm:py-3 rounded-2xl font-bold transition-all duration-300 arabic-text group relative overflow-hidden ${
                       isActive 
                         ? "active bg-amber-600/20 text-amber-400 shadow-lg shadow-amber-400/20" 
                         : "hover:bg-white/10 hover:scale-105"
@@ -209,19 +209,19 @@ export default function Navigation() {
           width: "100%",
         }}
       >
-        <div className="flex justify-around items-center py-3 px-2">
+        <div className="flex justify-around items-center py-1 px-2">
           {navItems.map((item, index) => {
             const isActive = pathname === item.href
             return (
               <Link
                 key={item.key}
                 href={item.href}
-                className={`flex flex-col items-center p-3 rounded-2xl transition-all duration-300 min-w-0 flex-1 group hover:scale-105 ${
+                className={`flex flex-col items-center p-1 rounded-2xl transition-all duration-300 min-w-0 flex-1 group hover:scale-105 ${
                   isActive ? "text-amber-400" : "text-white/70 hover:text-white"
                 }`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className={`p-3 rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${
+                <div className={`p-1 rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${
                   isActive ? "bg-amber-400/20 shadow-lg shadow-amber-400/20" : "group-hover:bg-white/10"
                 }`}>
                   <item.icon className="w-5 h-5 group-hover:text-amber-400 transition-colors" />
