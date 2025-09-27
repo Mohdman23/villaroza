@@ -98,11 +98,55 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   /* Optimize for fast loading */
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("/images/stone-wall-background.png");
   /* Progressive enhancement */
   will-change: background-image;
+}
+
+/* Mobile-specific background - Priority for mobile devices */
+@media (max-width: 768px) {
+  body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/background-mobile.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: scroll !important; /* Better performance on mobile */
+    background-repeat: no-repeat !important;
+    /* Ensure mobile background takes priority */
+    background-color: #1a1a1a !important;
+  }
+  
+  /* Debug: Add a subtle border to confirm mobile styles are active */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+    z-index: 9999;
+    opacity: 0.7;
+  }
+}
+
+/* Additional mobile breakpoints for better coverage */
+@media (max-width: 480px) {
+  body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/background-mobile.jpg") !important;
+  }
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+  body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/background-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
 }
 
 html {

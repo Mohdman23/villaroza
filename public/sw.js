@@ -2,6 +2,7 @@
 const CACHE_NAME = 'villa-roza-cache-v1';
 const urlsToCache = [
   '/images/stone-wall-background.png',
+  '/images/background-mobile.jpg',
   '/images/beige-bathroom-gold-accents.jpg',
   '/images/modern-grey-bathroom-complete.jpg',
   '/images/lightmarblebathroomcomplete.jpeg',

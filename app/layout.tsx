@@ -32,13 +32,19 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        {/* Preload critical background image for faster loading */}
-        <link
-          rel="preload"
-          as="image"
-          href="/images/stone-wall-background.png"
-          type="image/png"
-        />
+      {/* Preload critical background images for faster loading */}
+      <link
+        rel="preload"
+        as="image"
+        href="/images/stone-wall-background.png"
+        type="image/png"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/images/background-mobile.jpg"
+        type="image/jpeg"
+      />
         {/* Preload critical images */}
         <link
           rel="preload"
