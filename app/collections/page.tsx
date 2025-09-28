@@ -1257,10 +1257,12 @@ export default function CollectionsPage() {
 
                     {/* Enhanced Hover Actions */}
                     <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                      <Button size="sm" className="flex-1 btn-white font-bold text-sm h-12 hover:scale-105 transition-transform">
-                        <Eye className="w-4 h-4 ml-1" />
-                        عرض التفاصيل
-                      </Button>
+                      <Link href="/contact">
+                        <Button size="sm" className="flex-1 btn-white font-bold text-sm h-12 hover:scale-105 transition-transform">
+                          <Eye className="w-4 h-4 ml-1" />
+                          عرض التفاصيل
+                        </Button>
+                      </Link>
                       <Button 
                         size="sm" 
                         className={`h-12 w-12 p-0 transition-all duration-300 ${
@@ -1299,11 +1301,13 @@ export default function CollectionsPage() {
                   </div>
 
                   {/* Enhanced CTA Button */}
-                  <Button className="w-full btn-gold rounded-lg lg:rounded-xl py-3 lg:py-4 group-hover:scale-105 transition-all duration-300 arabic-text font-bold text-sm lg:text-lg shadow-lg hover:shadow-xl">
-                    <Zap className="w-4 h-4 lg:w-5 lg:h-5 ml-1 lg:ml-2 group-hover:rotate-12 transition-transform" />
-                    اطلب الآن
-                    <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 mr-1 lg:mr-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="w-full btn-gold rounded-lg lg:rounded-xl py-3 lg:py-4 group-hover:scale-105 transition-all duration-300 arabic-text font-bold text-sm lg:text-lg shadow-lg hover:shadow-xl">
+                      <Zap className="w-4 h-4 lg:w-5 lg:h-5 ml-1 lg:ml-2 group-hover:rotate-12 transition-transform" />
+                      اطلب الآن
+                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 mr-1 lg:mr-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

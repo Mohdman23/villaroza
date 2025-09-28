@@ -205,7 +205,7 @@ export default function ServicesPage() {
               {
                 title: "فريق متخصص",
                 description: "فنيون مدربون على أحدث تقنيات التركيب",
-                image: "/images/white-marble-bathroom.jpg",
+                image: "/images/white-marble-basin.jpg",
               },
             ].map((feature, index) => (
               <div key={index} className="glass-card rounded-2xl overflow-hidden shadow-xl">

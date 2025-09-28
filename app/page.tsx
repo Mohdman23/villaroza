@@ -292,10 +292,12 @@ export default function HomePage() {
                     ))}
                   </div>
 
-                  <Button className="w-full btn-gold rounded-xl py-3 font-bold">
-                    اعرف المزيد
-                    <ChevronRight className="w-4 h-4 mr-2" />
-                  </Button>
+                  <Link href="/services">
+                    <Button className="w-full btn-gold rounded-xl py-3 font-bold">
+                      اعرف المزيد
+                      <ChevronRight className="w-4 h-4 mr-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

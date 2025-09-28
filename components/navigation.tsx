@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Globe, Menu, X, Home, User, Briefcase, Phone, ShoppingBag, Sparkles, Zap } from "lucide-react"
+import { Globe, Home, User, Briefcase, Phone, ShoppingBag, Sparkles, Zap } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -30,7 +30,6 @@ const translations = {
 export default function Navigation() {
   const [language, setLanguage] = useState<"ar" | "en">("ar")
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
   const pathname = usePathname()
   const navRef = useRef<HTMLElement>(null)
@@ -117,20 +116,6 @@ export default function Navigation() {
                 {language === "ar" ? "EN" : "عربي"}
               </Button>
 
-              <Button
-                variant="outline"
-                size="sm"
-                className="lg:hidden h-10 w-10 border-white/30 hover:bg-white/10 bg-black/50 text-white p-0 transition-all duration-300 hover:scale-105"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              >
-                <div className="relative">
-                  {isMobileMenuOpen ? (
-                    <X className="w-5 h-5 animate-scale-in" />
-                  ) : (
-                    <Menu className="w-5 h-5" />
-                  )}
-                </div>
-              </Button>
             </div>
 
             {/* Enhanced Desktop Navigation */}
@@ -162,41 +147,6 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Enhanced Mobile Menu Overlay */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-16 bg-black z-40 animate-fade-in">
-            <div className="p-6 space-y-3">
-              {navItems.map((item, index) => {
-                const isActive = pathname === item.href
-                return (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center gap-4 p-5 rounded-2xl transition-all duration-300 arabic-text font-bold text-lg group hover:scale-105 ${
-                      isActive
-                        ? "bg-amber-600/20 text-amber-400 shadow-lg shadow-amber-400/20"
-                        : "text-white hover:bg-white/10 active:bg-white/20"
-                    }`}
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className={`p-3 rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${
-                      isActive ? "bg-amber-400/20 shadow-lg" : "bg-white/10"
-                    }`}>
-                      <item.icon className="w-6 h-6 group-hover:text-amber-400 transition-colors" />
-                    </div>
-                    <span className="group-hover:text-amber-400 transition-colors">
-                      {t.nav[item.key as keyof typeof t.nav]}
-                    </span>
-                    {isActive && (
-                      <div className="ml-auto w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
-                    )}
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        )}
       </nav>
 
       {/* Enhanced Mobile Bottom Navigation */}
