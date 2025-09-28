@@ -164,7 +164,7 @@ export default function Navigation() {
 
         {/* Enhanced Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-xl z-40 animate-fade-in">
+          <div className="lg:hidden fixed inset-0 top-16 bg-black/98 backdrop-blur-2xl z-40 animate-fade-in">
             <div className="p-6 space-y-3">
               {navItems.map((item, index) => {
                 const isActive = pathname === item.href
